@@ -26,6 +26,7 @@ import {
 import { AppContext } from '../context/AppContext';
 import { CONTRACT_ADDRESSES, TOKEN_TICKER } from '../utils/constants';
 import { SUPPORTED_NETWORK_IDS } from '../config';
+import UnsupportedNetwork from '../components/UnsupportedNetwork';
 
 const StyledButton = styled(Button)`
   height: 50px;
@@ -314,9 +315,9 @@ export default function Home() {
                     loadingText='Staking...'
                     disabled={
                       utils.formatUnits(allowance, 'ether') <
-                        utils.formatUnits(minimumStake, 'ether') ||
+                      utils.formatUnits(minimumStake, 'ether') ||
                       utils.formatUnits(raidBalance, 'ether') <
-                        utils.formatUnits(minimumStake, 'ether')
+                      utils.formatUnits(minimumStake, 'ether')
                     }
                     onClick={depositStake}
                     _hover={{
@@ -331,16 +332,7 @@ export default function Home() {
         </>
       )}
 
-      {context.signerAddress && !(context.chainId in SUPPORTED_NETWORK_IDS) && (
-        <Flex direction='column' alignItems='center'>
-          <Box fontSize='40px' color='red'>
-            <i className='fa-solid fa-circle-xmark'></i>
-          </Box>
-          <Text fontFamily='spaceMono' color='white' fontSize='1.2rem'>
-            Unsupported network
-          </Text>
-        </Flex>
-      )}
+      <UnsupportedNetwork />
     </Flex>
   );
 }
