@@ -13,16 +13,6 @@ export const Layout = ({ children }) => {
     radial-gradient(50% 175.1% at 0% 0%, #330F00 0%, rgba(51, 15, 0, 0) 100%),
     linear-gradient(0deg, #000000, #000000)'
     >
-    <Box
-      bgImage='/assets/ai_2.png'
-      position="fixed"
-      height="-webkit-fill-available"
-      left="0"
-      width="100%"
-      opacity="0.09"
-      bgPos="top"
-      bgSize="cover"
-    />
       <Meta />
       <Flex
         direction='column'
@@ -32,6 +22,18 @@ export const Layout = ({ children }) => {
         justifyContent='space-between'
         mx='auto'
       >
+    <Box
+      bgImage='/assets/ai_2.png'
+      position="fixed"
+      height="-webkit-fill-available"
+      left="0"
+      width="100%"
+      opacity="0.09"
+      bgPos="top"
+      bgSize="cover"
+      zIndex={1}
+      pointerEvents='none'
+    />
         <Header />
         {children}
 
