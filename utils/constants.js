@@ -11,8 +11,8 @@ export const CONTRACT_ADDRESSES = {
     riteOfMolochAddress: '0x35e02D20B12E7002B1B8c13D35Eb59d8FC383d7b'
   },
   100: {
-    erc20TokenAddress: '',
-    riteOfMolochAddress: ''
+    erc20TokenAddress: '0x18e9262e68cc6c6004db93105cc7c001bb103e49',
+    riteOfMolochAddress: '0x67f22aa92dc5bc8840073f0b9251af679a99ab57'
   }
 };
 

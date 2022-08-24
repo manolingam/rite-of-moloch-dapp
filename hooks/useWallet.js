@@ -7,13 +7,16 @@ import WalletConnectProvider from '@walletconnect/web3-provider';
 import { AppContext } from '../context/AppContext';
 
 import { SIGNATURE_MESSAGE } from '../utils/constants';
-import { INFURA_ID } from '../config';
+import { rpcUrls } from '../config';
 
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: INFURA_ID
+      rpc: {
+        4: rpcUrls[4],
+        100: rpcUrls[100]
+      }
     }
   }
 };
